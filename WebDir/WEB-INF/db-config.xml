@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class>
+
+	<pgConnConfig id = "1">
+      <connStr>jdbc:sqlserver://localhost:1433;Database=FLOWERSHOP_HDV</connStr>
+      <user>sa</user>
+      <pass>doan675895</pass>
+      <maxConn>10</maxConn>
+    </pgConnConfig>
+
+</class>
