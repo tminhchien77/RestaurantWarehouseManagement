@@ -11,6 +11,9 @@
 					<entry key="v1/GetAllRole">
 						<bean class="com.hdv.api.handlers.read.GetAllRoleHandler" />
 					</entry>
+					<entry key="v1/PostAccount">
+						<bean class="com.hdv.api.handlers.write.PostAccountHandler" />
+					</entry>
 				</map>
 			</property>
 	</bean>

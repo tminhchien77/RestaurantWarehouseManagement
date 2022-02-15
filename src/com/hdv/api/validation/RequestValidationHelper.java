@@ -1,15 +1,13 @@
 package com.hdv.api.validation;
 
+import com.hdv.api.entities.request.PostAccountPayLoad;
 
 public class RequestValidationHelper {
 
-//    @SuppressWarnings("null")
-//    public static void validateRequest(ProductPayload request) throws Exception {
-//        if (request == null) {
-//            throw new Exception("requestBodyIsNull,storeIdCannotBeNull");
-//        }
-//
-//    }
+    @SuppressWarnings("null")
+    public static void validateRequest(PostAccountPayLoad request) throws Exception {
+       ModelValidationHelper.validate(request);
+    }
 
 }
 
