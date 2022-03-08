@@ -10,7 +10,7 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
 import com.hdv.api.configs.DBConnConfig;
-import com.hdv.api.configs.Permission;
+//import com.hdv.api.configs.Permission;
 import com.hdv.api.entities.APIResponse;
 import com.hdv.api.entities.ResponseCode;
 import com.hdv.api.entities.response.HelthCheckResponseData;
@@ -193,10 +193,10 @@ public class RestAPIController {
 		res.setHeader("NodeName", ApplicationService.getHostname());
 	}
 
-	private boolean checkPermission(String user, String func, String ver) throws Exception {
-		Permission per = ApplicationService.ins().getPermissions().get(user);
-		return (per != null) ? per.hasPermission(func) : false;
-	}
+//	private boolean checkPermission(String user, String func, String ver) throws Exception {
+//		Permission per = ApplicationService.ins().getPermissions().get(user);
+//		return (per != null) ? per.hasPermission(func) : false;
+//	}
 
 	private APIHandler<?, ?> getHandler(String func, String ver) throws Exception {
 		return ApplicationService.ins().getHandlers().get(String.format("%s/%s", ver, func));

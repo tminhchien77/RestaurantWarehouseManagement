@@ -12,13 +12,14 @@
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.3.0</version>
+				<version>3.8.0</version>
 				<configuration>
 					<source>1.8</source>
 					<target>1.8</target>
 					<encoding>UTF-8</encoding>
 				</configuration>
 			</plugin>
+<!--			Đóng gói lưu trữ ứng dụng web-->
 			<plugin>
 				<artifactId>maven-war-plugin</artifactId>
 				<version>3.2.1</version>
@@ -70,6 +71,7 @@
 			<artifactId>spring-security-config</artifactId>
 			<version>5.1.8.RELEASE</version>
 		</dependency>
+		<!--Gửi các giao thức bằng java-->
 		<dependency>
 			<groupId>org.apache.httpcomponents</groupId>
 			<artifactId>httpclient</artifactId>
@@ -81,6 +83,7 @@
 			<artifactId>mssql-jdbc</artifactId>
 			<version>9.4.1.jre8</version>
 		</dependency>
+<!--		thực hiện log-->
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
@@ -96,6 +99,7 @@
 			<artifactId>log4j-core</artifactId>
 			<version>2.13.3</version>
 		</dependency>
+<!--	connect db + tác vụ với db, cả 2 commons-->
 		<dependency>
 			<groupId>commons-dbutils</groupId>
 			<artifactId>commons-dbutils</artifactId>
@@ -112,6 +116,7 @@
 			<version>3.1.0</version>
 			<scope>provided</scope>
 		</dependency>
+<!--		anotations-->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-annotations</artifactId>
@@ -122,11 +127,29 @@
 			<artifactId>jjwt</artifactId>
 			<version>0.9.1</version>
 		</dependency>
-<!--		// chuyển base64 cho code-->
+<!--		// chuyển base64 cho code phần jwt-->
 		<dependency>
 			<groupId>javax.xml.bind</groupId>
 			<artifactId>jaxb-api</artifactId>
 			<version>2.3.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter</artifactId>
+			<version>RELEASE</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>5.8.2</version>
+			<scope>compile</scope>
 		</dependency>
 	</dependencies>
 </project>

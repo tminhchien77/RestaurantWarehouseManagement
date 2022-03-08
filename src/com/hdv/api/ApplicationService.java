@@ -12,12 +12,12 @@ import java.util.List;
 import java.util.Map;
 
 import com.hdv.api.handlers.APIHandler;
-import com.hdv.api.configs.AuthUser;
+//import com.hdv.api.configs.AuthUser;
 import com.hdv.api.configs.ConsoleLogWiter;
 import com.hdv.api.configs.DBConnConfig;
 import com.hdv.api.configs.DBConnPool;
 import com.hdv.api.configs.ILogWriter;
-import com.hdv.api.configs.Permission;
+//import com.hdv.api.configs.Permission;
 
 public class ApplicationService {
 
@@ -25,9 +25,9 @@ public class ApplicationService {
 
 	private Map<String, APIHandler<?, ?>> handlers = null;
 
-	private Map<String, Permission> permissions = null;
+//	private Map<String, Permission> permissions = null;
 
-	private Map<String, AuthUser> users = null;
+//	private Map<String, AuthUser> users = null;
 
 	private DBConnPool dbConnPool = null;
 
@@ -55,15 +55,15 @@ public class ApplicationService {
 		if (logWriter == null) {
 			logWriter = new ConsoleLogWiter();
 		}
-		if (permissions == null) {
-			this.permissions = new HashMap<>();
-		}
+//		if (permissions == null) {
+//			this.permissions = new HashMap<>();
+//		}
 		if (handlers == null) {
 			handlers = new HashMap<>();
 		}
-		if (users == null) {
-			users = new HashMap<>();
-		}
+//		if (users == null) {
+//			users = new HashMap<>();
+//		}
 		Thread.sleep(2000L);
 	}
 
@@ -106,13 +106,13 @@ public class ApplicationService {
 		this.logWriter = logWriter;
 	}
 
-	public Map<String, AuthUser> getUsers() {
-		return this.users;
-	}
+//	public Map<String, AuthUser> getUsers() {
+//		return this.users;
+//	}
 
-	public void setUsers(Map<String, AuthUser> users) {
-		this.users = users;
-	}
+//	public void setUsers(Map<String, AuthUser> users) {
+//		this.users = users;
+//	}
 
 	public Map<String, APIHandler<?, ?>> getHandlers() {
 		return this.handlers;
@@ -122,13 +122,13 @@ public class ApplicationService {
 		this.handlers = handlers;
 	}
 
-	public Map<String, Permission> getPermissions() {
-		return this.permissions;
-	}
+//	public Map<String, Permission> getPermissions() {
+//		return this.permissions;
+//	}
 
-	public void setPermissions(Map<String, Permission> permissions) {
-		this.permissions = permissions;
-	}
+//	public void setPermissions(Map<String, Permission> permissions) {
+//		this.permissions = permissions;
+//	}
 
 	public static ApplicationService ins() throws Exception {
 		if (ins != null) {

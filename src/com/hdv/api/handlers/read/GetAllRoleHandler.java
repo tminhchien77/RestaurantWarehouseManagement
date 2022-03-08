@@ -29,7 +29,6 @@ public class GetAllRoleHandler extends APIHandler<APIRequest, GetAllRoleResponse
 
     @Override
     protected GetAllRoleResponseData handle(APIRequest request) throws Exception {
-       // RequestValidationHelper.validateOutputVoucherDetail4kForDelivery(request);
         GetAllRoleResponseData response = new GetAllRoleResponseData();
 
         List<RGetRole> listQuery = new ArrayList<>();

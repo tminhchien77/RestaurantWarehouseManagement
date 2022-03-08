@@ -2,6 +2,7 @@ package com.hdv.api.configs;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
 
+// chưa dùng
 public class MD5PassEncoder implements PasswordEncoder{
 
 	@Override
