@@ -24,12 +24,12 @@ public class AccountRepository {
         try (Connection connection = PgDBConfig.getDbConn().getConnection();
              CallableStatement proc = connection.prepareCall(callString);) {
             proc.registerOutParameter(1, Types.OTHER);
-            proc.setString(2,request.getUser().getEmail());
-            proc.setString(3, request.getUser().getPassword());
-            proc.setString(4, request.getUser().getPhone());
-            proc.setString(5,request.getUser().getAddress());
-            proc.setString(6, request.getUser().getName());
-            proc.setInt(7, request.getUser().getIdRole());
+            proc.setString(2,request.getEmail());
+            proc.setString(3, request.getPassword());
+            proc.setString(4, request.getPhone());
+            proc.setString(5,request.getAddress());
+            proc.setString(6, request.getName());
+            proc.setInt(7, request.getIdRole());
             proc.execute();
 
             connection.commit();

@@ -1,6 +1,8 @@
 package com.hdv.api.validation;
 
 import com.hdv.api.entities.request.PostAccountPayLoad;
+import com.hdv.api.utils.Const;
+
 
 public class ModelValidationHelper {
 
@@ -8,9 +10,25 @@ public class ModelValidationHelper {
         if (request == null) {
             throw new Exception("requestBodyIsNull,storeIdCannotBeNull");
         }
-        // example
-        if (request.getUser().getName().trim().isEmpty() || request.getUser().getName()==null){
+        boolean kt = request.getPhone().matches(Const.regPhone);
+        if (!kt) {
+            throw new Exception("Phone is not illegal");
+        }
+        kt=request.getEmail().trim().matches(Const.regEmail);
+        if (!kt) {
+            throw new Exception("Email is not illegal");
+        }
+        if (request.getName().trim().isEmpty() || request.getName()==null){
             throw new Exception("NameCannotBeNull");
+        }
+        if (request.getPassword()==null || request.getPassword().trim().isEmpty() ){
+            throw new Exception("PasswordCannotBeNull");
+        }
+        if (request.getAddress()==null){
+            throw new Exception("AddressCannotBeNull");
+        }
+        if (request.getIdRole()==null){
+            throw new Exception("IDRoleCannotBeNull");
         }
 	}
 	
