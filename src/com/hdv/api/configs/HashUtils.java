@@ -3,6 +3,8 @@ package com.hdv.api.configs;
 import java.math.BigInteger;
 import java.security.MessageDigest;
 
+
+// chưa dùng, bữa sau dùng trong mã hóa
 public class HashUtils {
 	public static String encodeMD5(String value) {
 		try {
