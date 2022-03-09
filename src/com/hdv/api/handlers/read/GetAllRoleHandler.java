@@ -7,8 +7,8 @@ import com.hdv.api.entities.APIRequest;
 import com.hdv.api.entities.response.GetAllRoleResponseData;
 import com.hdv.api.handlers.APIHandler;
 import com.hdv.api.resources.I18n;
-import com.hdv.api.posclient.Global;
 import com.hdv.api.service.RoleService;
+import com.hdv.api.utils.Global;
 
 import java.util.ArrayList;
 import java.util.List;

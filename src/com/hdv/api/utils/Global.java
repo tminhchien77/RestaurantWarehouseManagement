@@ -1,4 +1,4 @@
-package com.hdv.api.posclient;
+package com.hdv.api.utils;
 
 public class Global {
 
