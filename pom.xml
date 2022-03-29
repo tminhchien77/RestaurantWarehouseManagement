@@ -38,6 +38,14 @@
 				<filtering>true</filtering>
 				<targetPath>com/hdv/api/resources/langs</targetPath>
 			</resource>
+			<resource>
+				<directory>src/com/hdv/api/resources/conf</directory>
+				<includes>
+					<include>*.conf</include>
+				</includes>
+				<filtering>true</filtering>
+				<targetPath>com/hdv/api/resources/conf</targetPath>
+			</resource>
 		</resources>
 	</build>
 	<dependencies>
@@ -149,6 +157,12 @@
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-api</artifactId>
 			<version>5.8.2</version>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.jetbrains</groupId>
+			<artifactId>annotations</artifactId>
+			<version>RELEASE</version>
 			<scope>compile</scope>
 		</dependency>
 	</dependencies>

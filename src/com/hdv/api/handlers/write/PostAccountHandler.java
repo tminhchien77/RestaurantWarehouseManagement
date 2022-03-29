@@ -1,22 +1,14 @@
 package com.hdv.api.handlers.write;
 
-import com.hdv.api.dbresult.RGetRole;
-import com.hdv.api.entities.APIRequest;
 import com.hdv.api.entities.request.PostAccountPayLoad;
-import com.hdv.api.entities.response.GetAllRoleResponseData;
 import com.hdv.api.entities.response.PostAccountResponseData;
 import com.hdv.api.handlers.APIHandler;
-import com.hdv.api.posclient.Global;
 import com.hdv.api.resources.I18n;
 import com.hdv.api.service.AccountService;
-import com.hdv.api.service.RoleService;
+import com.hdv.api.utils.Global;
 import com.hdv.api.validation.RequestValidationHelper;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
 import java.util.TimeZone;
-import java.util.stream.Collectors;
 
 public class PostAccountHandler extends APIHandler<PostAccountPayLoad, PostAccountResponseData> {
 

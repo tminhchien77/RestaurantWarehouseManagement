@@ -1,10 +1,33 @@
 package com.hdv.api.validation.jwt;
 
+import com.google.gson.JsonObject;
+import com.hdv.api.resources.MRes;
+import com.hdv.api.utils.IOUtils;
+import com.hdv.api.utils.JsonUtil;
+import com.hdv.api.utils.OBJ;
+
+import java.io.InputStream;
+
 public class JWTConfig {
 
-	public static final String key="HDV2022Secret";
+	private static JWTConfig ins = null;
+	public final String key;
 
-	//token gen :
-		// eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJEb2FuQ3VvbmdEYWkiLCJuYW1lIjoiSERWIEdyb3VwIiwiaWF0IjoyNTAxMjAyMjA5MTE3MTE5MDB9.2VaeS_V11otO0TX6P1w9eIPQQKtlNHbGfUoS55AzkGg
+	public JWTConfig() throws Exception {
+		try (InputStream in = MRes.getResourceStream("conf/jwtConfig.conf")) {
+			System.out.println(in);
+			JsonObject json = JsonUtil.gson.fromJson((String) OBJ.unZip(IOUtils.toString(in, "UTF-8")),
+					JsonObject.class);
+			key = json.get("key").getAsString();
+			System.out.println(key);
+		}
+	}
+
+	public static JWTConfig ins() throws Exception {
+		if (ins == null) {
+			ins = new JWTConfig();
+		}
+		return ins;
+	}
 
 }
