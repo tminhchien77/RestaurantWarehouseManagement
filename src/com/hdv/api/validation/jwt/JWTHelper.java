@@ -15,7 +15,7 @@ public class JWTHelper{
 			if(token == null)
 				return isVerify;
 
-			if (Objects.equals(Jwts.parser().setSigningKey(JWTConfig.key).parseClaimsJws(token).getHeader().getAlgorithm(),
+			if (Objects.equals(Jwts.parser().setSigningKey(JWTConfig.ins().key).parseClaimsJws(token).getHeader().getAlgorithm(),
 					String.valueOf(SignatureAlgorithm.HS256))) {
 				return true;
 			}
