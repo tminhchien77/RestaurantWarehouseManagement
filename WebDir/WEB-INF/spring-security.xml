@@ -13,5 +13,5 @@
 		</authentication-provider>
 	</authentication-manager>
 	<b:bean id="userService" class="com.hdv.api.configs.UserService" />
-	<b:bean id="md5PasswordEncoder" class="com.hdv.api.configs.MD5PassEncoder" />
+	<b:bean id="md5PasswordEncoder" class="com.rwm.api.configs.MD5PassEncoder" />
 </b:beans>

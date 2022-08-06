@@ -2,9 +2,9 @@
 <class>
 
 	<pgConnConfig id = "1">
-      <connStr>jdbc:sqlserver://localhost:1433;Database=FLOWERSHOP_HDV</connStr>
+      <connStr>jdbc:sqlserver://localhost:1433;Database=RestaurantWarehouseManagement</connStr>
       <user>sa</user>
-      <pass>doan675895</pass>
+      <pass>123</pass>
       <maxConn>10</maxConn>
     </pgConnConfig>
 

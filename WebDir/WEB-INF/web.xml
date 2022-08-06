@@ -22,7 +22,7 @@
   </listener>
   <servlet>
     <servlet-name>SpringMVC</servlet-name>
-    <servlet-class>com.hdv.api.configs.LoggableDispatcherServlet</servlet-class>
+    <servlet-class>com.rwm.api.configs.LoggableDispatcherServlet</servlet-class>
     <init-param>
       <param-name>contextConfigLocation</param-name>
       <param-value>/WEB-INF/spring-servlet.xml</param-value>
@@ -39,7 +39,7 @@
   </filter> -->
   <filter>
     <filter-name>EncodingFilter</filter-name>
-    <filter-class>com.hdv.api.configs.EncodingFilter</filter-class>
+    <filter-class>com.rwm.api.configs.EncodingFilter</filter-class>
     <init-param>
       <param-name>encoding</param-name>
       <param-value>UTF-8</param-value>
