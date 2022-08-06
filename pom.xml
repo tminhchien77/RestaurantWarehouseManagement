@@ -2,13 +2,13 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>WSApi</groupId>
-	<artifactId>WSApi</artifactId>
+	<groupId>RWMApi</groupId>
+	<artifactId>RWMApi</artifactId>
 	<version>1.0</version>
 	<packaging>war</packaging>
 	<build>
 		<sourceDirectory>src</sourceDirectory>
-		<finalName>WSApi</finalName>
+		<finalName>RWMApi</finalName>
 		<plugins>
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -36,7 +36,7 @@
 					<include>*.properties</include>
 				</includes>
 				<filtering>true</filtering>
-				<targetPath>com/hdv/api/resources/langs</targetPath>
+				<targetPath>com/rwm/api/resources/langs</targetPath>
 			</resource>
 			<resource>
 				<directory>src/com/rwm/api/resources/conf</directory>
@@ -44,7 +44,7 @@
 					<include>*.conf</include>
 				</includes>
 				<filtering>true</filtering>
-				<targetPath>com/hdv/api/resources/conf</targetPath>
+				<targetPath>com/rwm/api/resources/conf</targetPath>
 			</resource>
 		</resources>
 	</build>

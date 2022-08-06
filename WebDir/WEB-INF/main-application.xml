@@ -14,6 +14,9 @@
 					<entry key="v1/PostAccount">
 						<bean class="com.rwm.api.handlers.write.PostAccountHandler" />
 					</entry>
+					<entry key="v1/GetAllBranch">
+						<bean class="com.rwm.api.handlers.read.GetAllBranchHandler" />
+					</entry>
 				</map>
 			</property>
 	</bean>
