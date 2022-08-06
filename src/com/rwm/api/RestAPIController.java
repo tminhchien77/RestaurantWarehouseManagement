@@ -120,7 +120,7 @@ public class RestAPIController {
 	@GetMapping(value = "/{func}", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
     public APIResponse getAPILoyalty(@PathVariable("ver") String ver, @PathVariable("func") String func, @RequestBody String payload, HttpServletRequest req, HttpServletResponse res) {
         APIResponse response = null;
-
+		System.out.println("Here");
 		/*try {
 			JWTHelper jWTHelper = new JWTHelper();
 			response = jWTHelper.doJWT(ver, func, getToken(req));
