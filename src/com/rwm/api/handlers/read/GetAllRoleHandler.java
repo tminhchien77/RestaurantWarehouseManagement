@@ -4,7 +4,7 @@ package com.rwm.api.handlers.read;
 
 import com.rwm.api.dbresult.RGetRole;
 import com.rwm.api.entities.APIRequest;
-import com.rwm.api.entities.response.GetAllRoleResponseData;
+import com.rwm.api.entities.response.ResponseDataWithObject;
 import com.rwm.api.handlers.APIHandler;
 import com.rwm.api.resources.I18n;
 import com.rwm.api.service.RoleService;
@@ -16,7 +16,7 @@ import java.util.Map;
 import java.util.TimeZone;
 import java.util.stream.Collectors;
 
-public class GetAllRoleHandler extends APIHandler<APIRequest, GetAllRoleResponseData> {
+public class GetAllRoleHandler extends APIHandler<APIRequest, ResponseDataWithObject> {
 
     static {
         System.setProperty("file.encoding", "UTF-8");
@@ -28,8 +28,8 @@ public class GetAllRoleHandler extends APIHandler<APIRequest, GetAllRoleResponse
     }
 
     @Override
-    protected GetAllRoleResponseData handle(APIRequest request) throws Exception {
-        GetAllRoleResponseData response = new GetAllRoleResponseData();
+    protected ResponseDataWithObject handle(APIRequest request) throws Exception {
+        ResponseDataWithObject response = new ResponseDataWithObject();
 
         List<RGetRole> listQuery = new ArrayList<>();
         listQuery = RoleService.getAllRole();

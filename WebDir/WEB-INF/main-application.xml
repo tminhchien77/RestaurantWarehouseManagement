@@ -17,6 +17,96 @@
 					<entry key="v1/GetAllBranch">
 						<bean class="com.rwm.api.handlers.read.GetAllBranchHandler" />
 					</entry>
+					<entry key="v1/GetAllSupplier">
+						<bean class="com.rwm.api.handlers.read.GetAllSupplierHandler" />
+					</entry>
+					<entry key="v1/SearchItem">
+						<bean class="com.rwm.api.handlers.read.SearchItemHandler" />
+					</entry>
+					<entry key="v1/GetAllQuantityUnit">
+						<bean class="com.rwm.api.handlers.read.GetAllQuantityUnitHandler" />
+					</entry>
+					<entry key="v1/PostItem">
+						<bean class="com.rwm.api.handlers.write.PostItemHandler" />
+					</entry>
+					<entry key="v1/GetItemSupsByItemId">
+						<bean class="com.rwm.api.handlers.read.GetItemSupsHandler" />
+					</entry>
+					<entry key="v1/PutItem">
+						<bean class="com.rwm.api.handlers.write.PutItemHandler" />
+					</entry>
+					<entry key="v1/PostItemSups">
+						<bean class="com.rwm.api.handlers.write.PostItemSupsHandler" />
+					</entry>
+					<entry key="v1/DelItemSups">
+						<bean class="com.rwm.api.handlers.write.DelItemSupsHandler" />
+					</entry>
+					<entry key="v1/SearchIInvoiceLicense">
+						<bean class="com.rwm.api.handlers.read.SearchIInvLicenseHandler" />
+					</entry>
+					<entry key="v1/GetItemSupsBySupplierId">
+						<bean class="com.rwm.api.handlers.read.GetItemSupsBySupplierIdHandler" />
+					</entry>
+					<entry key="v1/GetInvLicenseId">
+						<bean class="com.rwm.api.handlers.read.GetInvLicenseIdHandler" />
+					</entry>
+					<entry key="v1/PostInvLicense">
+						<bean class="com.rwm.api.handlers.write.PostInvLicenseHandler" />
+					</entry>
+					<entry key="v1/GetInvLicenseDetailByInvLicenseId">
+						<bean class="com.rwm.api.handlers.read.GetInvLicenseDetailByInvLicenseIdHandler" />
+					</entry>
+					<entry key="v1/GetAllDish">
+						<bean class="com.rwm.api.handlers.read.GetAllDishHandler" />
+					</entry>
+					<entry key="v1/GetItemByDishIds">
+						<bean class="com.rwm.api.handlers.read.GetItemByDishIdsHandler" />
+					</entry>
+					<entry key="v1/PostImExRequest">
+						<bean class="com.rwm.api.handlers.write.PostImExRequestHandler" />
+					</entry>
+					<entry key="v1/GetStoreHistoryByItemId">
+						<bean class="com.rwm.api.handlers.read.GetStoreHistoryByItemIdHandler" />
+					</entry>
+					<entry key="v1/GetUserHandlerByUsernamePwd">
+						<bean class="com.rwm.api.handlers.read.GetUserHandlerByUsernamePwdHandler" />
+					</entry>
+					<entry key="v1/SearchSupplier">
+						<bean class="com.rwm.api.handlers.read.SearchSupplierHandler" />
+					</entry>
+					<entry key="v1/GetAllItem">
+						<bean class="com.rwm.api.handlers.read.GetAllItemHandler" />
+					</entry>
+					<entry key="v1/PostSupplier">
+						<bean class="com.rwm.api.handlers.write.PostSupplierHandler" />
+					</entry>
+					<entry key="v1/DelItem">
+						<bean class="com.rwm.api.handlers.write.DelItemHandler" />
+					</entry>
+					<entry key="v1/SelSupplier">
+						<bean class="com.rwm.api.handlers.read.SelSupplierHandler" />
+					</entry>
+					<entry key="v1/SearchStoreHistoryDetail">
+						<bean class="com.rwm.api.handlers.read.SearchStoreHistoryDetailHandler" />
+					</entry>
+					<entry key="v1/PostStoreCheckSheet">
+						<bean class="com.rwm.api.handlers.write.PostStoreCheckSheetHandler" />
+					</entry>
+					<entry key="v1/SearchStoreCheckSheet">
+						<bean class="com.rwm.api.handlers.read.SearchStoreCheckSheetHandler" />
+					</entry>
+					<entry key="v1/GetStoreHistoryDetailByCheckSheetId">
+						<bean class="com.rwm.api.handlers.read.GetStoreHistoryDetailByCheckSheetIdHandler" />
+					</entry>
+					<entry key="v1/PostExInvLicense">
+						<bean class="com.rwm.api.handlers.write.PostExInvLicenseHandler" />
+					</entry>
+					<entry key="v1/SearchExInvLicense">
+						<bean class="com.rwm.api.handlers.read.SearchExInvLicenseHandler" />
+					</entry>
+					<entry key="v1/GetExInvLicenseDetailByInvLicenseId">
+						<bean class="com.rwm.api.handlers.read.GetExInvLicenseDetailByInvLicenseIdHandler" />
+					</entry>
 				</map>
 			</property>
 	</bean>

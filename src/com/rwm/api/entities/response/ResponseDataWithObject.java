@@ -2,7 +2,7 @@ package com.rwm.api.entities.response;
 
 import com.rwm.api.entities.ResponseData;
 
-public class GetAllRoleResponseData extends ResponseData {
+public class ResponseDataWithObject extends ResponseData {
 
     private String message;
 

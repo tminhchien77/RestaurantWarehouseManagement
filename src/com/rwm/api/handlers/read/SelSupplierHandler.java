@@ -2,12 +2,13 @@ package com.rwm.api.handlers.read;
 
 
 
-import com.rwm.api.dbresult.RGetBranch;
-import com.rwm.api.entities.APIRequest;
+import com.rwm.api.dbresult.RSearchSupplier;
+import com.rwm.api.entities.request.GetByKeywordPayLoad;
+import com.rwm.api.entities.request.IntPayLoad;
 import com.rwm.api.entities.response.ResponseDataWithObject;
 import com.rwm.api.handlers.APIHandler;
 import com.rwm.api.resources.I18n;
-import com.rwm.api.service.BranchService;
+import com.rwm.api.service.SupplierService;
 import com.rwm.api.utils.Global;
 
 import java.util.ArrayList;
@@ -16,27 +17,26 @@ import java.util.Map;
 import java.util.TimeZone;
 import java.util.stream.Collectors;
 
-public class GetAllBranchHandler extends APIHandler<APIRequest, ResponseDataWithObject> {
+public class SelSupplierHandler extends APIHandler<IntPayLoad, ResponseDataWithObject> {
 
     static {
         System.setProperty("file.encoding", "UTF-8");
         TimeZone.setDefault(TimeZone.getTimeZone(System.getProperty("time.zone", "Asia/Ho_Chi_Minh")));
     }
 
-    public GetAllBranchHandler() {
-        super(APIRequest.class);
+    public SelSupplierHandler() {
+        super(IntPayLoad.class);
     }
 
     @Override
-    protected ResponseDataWithObject handle(APIRequest request) throws Exception {
+    protected ResponseDataWithObject handle(IntPayLoad request) throws Exception {
         ResponseDataWithObject response = new ResponseDataWithObject();
-
-        List<RGetBranch> listQuery = new ArrayList<>();
-        listQuery = BranchService.getAllBranch();
-        List<Map<String,Object>> data = listQuery.stream().map(RGetBranch::getValueMap).collect(Collectors.toList());
+        RSearchSupplier result =new RSearchSupplier();
+        result = SupplierService.selectSupplier(request);
+        Map<String,Object> data = result.getValueMap();
         response.setData(data);
         I18n.load(Global.locale);
-        String message = I18n.get("getAllBranchSuccess");
+        String message = I18n.get("selectSupplierSuccess");
         response.setMessage(message);
         return response;
 

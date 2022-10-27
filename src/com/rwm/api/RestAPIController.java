@@ -2,6 +2,7 @@ package com.rwm.api;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Arrays;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,26 +18,23 @@ import com.rwm.api.entities.response.HelthCheckResponseData;
 import com.rwm.api.handlers.APIHandler;
 import com.rwm.api.utils.Utils;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
-
+@CrossOrigin(origins = "http://127.0.0.1:5500", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.DELETE})
 @RestController
 @RequestMapping("/api/{ver}")
 public class RestAPIController {
 	
 	@PostMapping(value = "/{func}", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	public APIResponse APILoyalty(@PathVariable("ver") String ver, @PathVariable("func") String func, @RequestBody String payload, HttpServletRequest req, HttpServletResponse res) {
+		System.out.println("payload");
+		System.out.println(payload);
+		System.out.println("func");
+		System.out.println(func);
 		APIResponse response = null;
 
 		/*try {
@@ -54,24 +52,31 @@ public class RestAPIController {
 		try {
 			String dbConfigPath = req.getServletContext().getRealPath("/WEB-INF/db-config.xml");
 			addDbConfig(dbConfigPath);
-			
+			System.out.println("func "+ func);
+			System.out.println("func "+ ver);
 			this.setHeader(res);
 			final APIHandler<?, ?> handler = getHandler(func, ver);
 			if (handler != null) {
+				System.out.println("handler != null");
 				response = new APIResponse(new ResponseCode(0, "OK", "")).setResponseData(handler.handle(payload));
 			} else {
+				System.out.println("handler = null");
 				response = new APIResponse(new ResponseCode(-2, "FUNCTION_NOT_FOUND", ""));
 			}
 		} catch (Exception ex) {
+			System.out.println("catch");
 			logError(ex);
 			response = new APIResponse(new ResponseCode(-1024, ex.getMessage(), Utils.dumpException(ex)));
 		}
 		response.getResponseCode().setExeInMills(System.currentTimeMillis() - startTime).setUsername("username").setVersion(ver).setFunction(func);
+
 		return response;
 	}
 	
 	@PutMapping(value = "/{func}", consumes = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	public APIResponse putAPILoyalty(@PathVariable("ver") String ver, @PathVariable("func") String func, @RequestBody String payload, HttpServletRequest req, HttpServletResponse res) {
+//		System.out.println("payload");
+		System.out.println(payload);
 		APIResponse response = null;
 
 		/*try {
@@ -104,7 +109,7 @@ public class RestAPIController {
 		response.getResponseCode().setExeInMills(System.currentTimeMillis() - startTime).setUsername("username").setVersion(ver).setFunction(func);
 		return response;
 	}
-	
+
 	@GetMapping(value = "/healthcheck")
 	public APIResponse getAPILoyalty1(@PathVariable("ver") String ver, HttpServletRequest req, HttpServletResponse res) {
 		APIResponse response = null;
